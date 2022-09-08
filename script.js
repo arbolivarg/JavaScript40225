@@ -8,17 +8,38 @@ let planSeleccionado = parseInt(
 )
 let seguirComprando = true
 let decision
+let planes = []
+let cart =[]
+
+const internet ={
+  nombre:'Internet',
+  precio:100
+}
+planes.push(internet)
+const tv ={
+  nombre:'TV',
+  precio:50
+}
+planes.push(tv)
+const telefonia ={
+  nombre:'Telefonía',
+  precio:50
+}
+planes.push(telefonia)
+
+console.log(planes) // Validar el arreglo de objetos donde se almacenan los datos necesarios (hasta ahora) de cada plan.
 
 while (seguirComprando === true) {
   if (planSeleccionado === 1) {
-    compra = compra + 100
+    cart.push(planes[0])
+    //compra = compra + 100
   } else if (planSeleccionado === 2) {
-    compra = compra + 50
+    cart.push(planes[1])
+    //compra = compra + 50
   } else if (planSeleccionado === 3) {
-    compra = compra + 50
-  } 
-
-  else{
+    cart.push(planes[2])
+    //compra = compra + 50
+  } else{
     planSeleccionado = parseInt(prompt('Digita un plan válido: 1. Internet | 2. TV | 3. Telefonía Fija'))
     continue
   }
@@ -34,6 +55,21 @@ while (seguirComprando === true) {
     seguirComprando = false
   }
 }
+
+console.log(cart) // Validar el arreglo de planes seleccionados por el usuario
+
+
+for (const elemento of cart) {
+  compra = compra +elemento.precio
+}
+
+const internetSeleccionado = (cart.find(objeto=>objeto.nombre=='TV')) //Método find
+if(internetSeleccionado){
+  alert('Hemos visto que seleccionaste en tu plan TV. ¡Pregunta por nuestro servicio 4K!') //Alert con nuevo producto (TV 4K)
+} else{
+
+}
+
 
 alert('El valor total sin descuento es: '+compra)
 
