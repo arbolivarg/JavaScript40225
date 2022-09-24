@@ -1,3 +1,26 @@
+const inputNombre = document.getElementById('nombre')
+const inputApellido = document.querySelector('#apellido')
+const botonIngresar = document.getElementById('botonIngresar')
+const divDatos = document.querySelector('.divDatos')
+const divSaludo = document.querySelector('#divSaludo') 
+
+botonIngresar.onclick = () =>{
+  const usuario = {
+    nombre: inputNombre.value,
+    apellido: inputApellido.value
+  }
+localStorage.setItem('usuarioStorage',JSON.stringify(usuario))
+divDatos.remove()
+saludar(usuario)
+}
+
+function saludar(user){
+  const saludarTitulo = document.createElement('h2')
+  saludarTitulo.innerText = `Bienvenido ${user.nombre} ${user.apellido}, escoge los productos que quieres comprar`
+  divSaludo.append(saludarTitulo)
+}
+
+
 let planes = []
 
 const selectTag = document.getElementById('lista')
