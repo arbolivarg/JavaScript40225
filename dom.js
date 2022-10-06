@@ -81,5 +81,9 @@ boton2.onclick = ()=>{
     cart.forEach((prod)=>{
         totalCompra = totalCompra + prod.precio
     })
-    alert('El precio total de los servicios es '+totalCompra)
+    //Incluyendo librerías
+    Swal.fire(
+      'El precio total de los servicios comprados es: '+totalCompra, '¡Gracias por preferirnos!', 'success'
+    )
+    //alert('El precio total de los servicios es '+totalCompra)
 }
