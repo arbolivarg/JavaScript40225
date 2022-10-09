@@ -1,0 +1,17 @@
+[
+    {
+        "id":1,
+        "name":"TV",
+        "description":"30 Canales nacionales - 100 Internacionales"
+    },
+    {
+        "id":2,
+        "name":"Telefono",
+        "description":"Llamadas locales y larga distancia ilimitadas"
+    },
+    {
+        "id":3,
+        "name":"Internet",
+        "description":"300MB simétricas de velocidad - Subida y bajada"
+    }
+]

@@ -87,3 +87,26 @@ boton2.onclick = ()=>{
     )
     //alert('El precio total de los servicios es '+totalCompra)
 }
+
+//fetch
+
+const tabla = document.querySelector('#lista-Productos tbody')
+
+function cargarProductos(){
+  fetch('listaProductos.json')
+      .then(respuesta=>respuesta.json()) //formato de la información en el json
+      .then(listado=> {
+        listado.forEach(lista=>{
+          const contenido = document.createElement('tr');
+          contenido.innerHTML += `
+                <td>${lista.id}</td>
+                <td>${lista.name}</td>
+                <td>${lista.description}</td>
+          `;
+          tabla.appendChild(contenido)
+
+        })
+      }) //se muestra la info del json
+}
+
+cargarProductos();
