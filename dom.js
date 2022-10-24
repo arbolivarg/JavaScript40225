@@ -16,7 +16,7 @@ saludar(usuario)
 
 function saludar(user){
   const saludarTitulo = document.createElement('h2')
-  saludarTitulo.innerText = `Bienvenido ${user.nombre} ${user.apellido}, escoge los productos que quieres comprar`
+  saludarTitulo.innerText = `Bienvenido ${user.nombre} ${user.apellido}, escoge los productos que quieres comprar y luego dale click al botón 'Terminar Compra'`
   divSaludo.append(saludarTitulo)
 }
 
